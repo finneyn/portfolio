@@ -1,18 +1,8 @@
 import {
-  AcademicCapIcon,
   ArrowDownTrayIcon,
   BuildingOffice2Icon,
-  CalendarIcon,
-  FlagIcon,
   MapIcon,
-  SparklesIcon,
 } from '@heroicons/react/24/outline';
-
-import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
-import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -23,8 +13,6 @@ import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
 import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
 import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -33,6 +21,7 @@ import {
   ContactType,
   Hero,
   HomepageMeta,
+  PortfolioClient,
   PortfolioItem,
   SkillGroup,
   Social,
@@ -44,8 +33,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Nick Finney's react resume template",
+  title: 'Nick Finney Web Developer Portfolio',
+  description: "Nick Finney's Web Developer Portfolio and Resume",
 };
 
 /**
@@ -69,18 +58,11 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Nick Finney.`,
+  name: `Nick Finney`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        Web developer with close to ten years of professional experience building and maintaining websites, with a recent focus on WordPress development and prior experience working extensively with Drupal. Specializing in delivering full website builds, custom block development, and ongoing site maintenance. Strong verbal and written communication skills with a collaborative, team-oriented approach.
       </p>
     </>
   ),
@@ -104,16 +86,10 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `Web developer with close to ten years of professional experience building and maintaining websites, with a recent focus on WordPress development and prior experience working extensively with Drupal. Specializing in delivering full website builds, custom block development, and ongoing site maintenance. Strong verbal and written communication skills with a collaborative, team-oriented approach.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Reno, NV', Icon: MapIcon},
+    {label: 'Employment', text: 'Noble Studios', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -122,70 +98,40 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Frontend Technologies',
     skills: [
       {
-        name: 'English',
+        name: 'HTML / SCSS / PHP',
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
-      },
-      {
-        name: 'Spanish',
-        level: 3,
-      },
-    ],
-  },
-  {
-    name: 'Frontend development',
-    skills: [
-      {
-        name: 'React',
+        name: 'JavaScript / TypeScript / React',
         level: 9,
       },
       {
-        name: 'Typescript',
-        level: 7,
-      },
-      {
-        name: 'GraphQL',
-        level: 6,
+        name: 'Responsive Design / Figma',
+        level: 9,
       },
     ],
   },
   {
-    name: 'Backend development',
+    name: 'CMS & Development Tools',
     skills: [
       {
-        name: 'Node.js',
+        name: 'WordPress / ACF / Gutenberg',
+        level: 10,
+      },
+      {
+        name: 'Drupal / Paragraph Types / Views / Twig',
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
-      },
-    ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
+        name: 'Git / CLI / Docker / Lando',
         level: 9,
       },
       {
-        name: 'Flutter',
-        level: 4,
-      },
-      {
-        name: 'Swift',
-        level: 3,
+        name: 'Pantheon / WP Engine / Acquia / AWS',
+        level: 8,
       },
     ],
   },
@@ -194,117 +140,145 @@ export const skills: SkillGroup[] = [
 /**
  * Portfolio section
  */
-export const portfolioItems: PortfolioItem[] = [
+export const portfolioClients: PortfolioClient[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage1,
+    name: 'Client One',
+    description:
+      'A comprehensive WordPress website build featuring custom Gutenberg blocks, responsive design, and seamless content management. Built with modern frontend practices and optimized for performance.',
+    url: 'https://example.com',
+    media: [
+      {
+        type: 'image',
+        src: porfolioImage1,
+        alt: 'Client One - Homepage',
+      },
+      {
+        type: 'image',
+        src: porfolioImage2,
+        alt: 'Client One - About Page',
+      },
+      {
+        type: 'video',
+        src: '/videos/client-one-demo.mp4',
+        thumbnail: porfolioImage3,
+        alt: 'Client One - Site Walkthrough',
+      },
+      {
+        type: 'image',
+        src: porfolioImage4,
+        alt: 'Client One - Contact Page',
+      },
+    ],
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage2,
-  },
-  {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage3,
-  },
-  {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage4,
-  },
-  {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage5,
-  },
-  {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage11,
+    name: 'Client Two',
+    description:
+      'A Drupal-based website for a higher education institution with complex content types, custom views, and advanced functionality. Features responsive design and accessibility compliance.',
+    url: 'https://example.com',
+    media: [
+      {
+        type: 'image',
+        src: porfolioImage5,
+        alt: 'Client Two - Homepage',
+      },
+      {
+        type: 'video',
+        src: '/videos/client-two-demo.mp4',
+        thumbnail: porfolioImage6,
+        alt: 'Client Two - Feature Demo',
+      },
+      {
+        type: 'image',
+        src: porfolioImage7,
+        alt: 'Client Two - Programs Page',
+      },
+      {
+        type: 'image',
+        src: porfolioImage8,
+        alt: 'Client Two - Events Page',
+      },
+      {
+        type: 'video',
+        src: '/videos/client-two-mobile.mp4',
+        thumbnail: porfolioImage9,
+        alt: 'Client Two - Mobile Experience',
+      },
+    ],
   },
 ];
+
+// Legacy portfolio items (kept for backwards compatibility if needed)
+export const portfolioItems: PortfolioItem[] = [];
 
 /**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
-export const education: TimelineItem[] = [
+export const experience: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'February 2021 – January 2026',
+    location: 'Noble Studios',
+    title: 'Web Developer',
+    content: (
+      <ul className="list-disc list-inside space-y-2 text-sm">
+        <li>Web Developer on the Technical Services team at a digital marketing agency where we built and maintained multiple WordPress websites across tourism, B2B, financial services, public sector and nonprofit organizations.</li>
+        <li>Collaborated with designers to implement Figma designs into pixel-perfect, responsive components using modern frontend best practices.</li>
+        <li>Developed custom Gutenberg/ACF blocks using TypeScript, PHP, SCSS, and JavaScript to streamline content creation, improve editorial workflows, and enhance user experience across sites.</li>
+        <li>Enhanced and extended a custom WordPress base theme used across new projects, building and refining Block Editor components to improve consistency, scalability, and developer efficiency.</li>
+        <li>Managed monthly WordPress site maintenance across multiple properties, including accessibility updates, plugin/core upgrades, and Core Web Vitals performance enhancements.</li>
+        <li>Leveraged AI-assisted development tools, including Cursor, to accelerate coding efficiency, troubleshoot issues, and enhance workflow.</li>
+        <li>Served on the company's Noble Deeds Committee and acted as primary developer for the nonprofit recipient's 2025 website build.</li>
+        <li>Managed WordPress deployments on Pantheon and WP Engine, collaborating through Git and pull requests, and leveraged Docker/Lando for local development and testing.</li>
+        <li>Followed departmental development best practices, including BEM methodology for SCSS, to ensure maintainable and scalable code.</li>
+        <li>Supported the performance marketing department on Technical SEO audits.</li>
+        <li>Supported large-scale Drupal website for higher education client, working with content types, paragraph types, views, blocks, and Twig templates.</li>
+        <li>Assisted with Drupal core and module updates, routine maintenance, and complex configuration tasks.</li>
+        <li>Participated in major site redesign for Drupal client and collaborated with developers, project managers, and clients to meet strict deadlines.</li>
+        <li>Worked with Acquia hosted Drupal environment, following established deployment and release best practices.</li>
+      </ul>
+    ),
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'August 2018 – February 2021',
+    location: 'Caesars Entertainment',
+    title: 'Web Developer',
+    content: (
+      <ul className="list-disc list-inside space-y-2 text-sm">
+        <li>Served as lead Drupal developer, managing multiple property and marketing website projects from design through deployment.</li>
+        <li>Helped to develop a custom Drupal theme and child themes used across 20+ websites for consistent look and feel.</li>
+        <li>Worked extensively with Drupal Content Types, Paragraph Types, Views, Blocks, Menus, Taxonomy, and more.</li>
+        <li>Handled deployments to ensure production-ready code was released seamlessly and reliably.</li>
+        <li>Managed site migrations and hosting setup, including large-scale AWS server configuration.</li>
+        <li>Utilized Git/GitHub, Docker, and CLI for version control and local development.</li>
+        <li>Trained and supported content editors on Drupal functionality, ensuring accurate content updates and feature adoption.</li>
+        <li>Served in a project lead role during staffing changes, leading Dev Status meetings and overseeing completion of all tasks and projects.</li>
+        <li>Expanded technical skillset by gaining initial experience with AEM, Java, and React during post-merger web development projects.</li>
+      </ul>
+    ),
+  },
+  {
+    date: 'May 2016 – August 2018',
+    location: 'Caesars Entertainment',
+    title: 'Jr. Web Developer/Project Coordinator',
+    content: (
+      <ul className="list-disc list-inside space-y-2 text-sm">
+        <li>Coordinated project workflows, managing task queues and leading Dev Status meetings to track progress and priorities.</li>
+        <li>Developed new features for Drupal websites and supported onboarding of newly acquired properties, migrating content and addressing site-specific requirements.</li>
+        <li>Trained content editors on Drupal usage, providing guidance for efficient content management.</li>
+        <li>Built foundational skills in HTML, CSS/SCSS, JavaScript, and Twig through daily development tasks.</li>
+      </ul>
+    ),
   },
 ];
 
-export const experience: TimelineItem[] = [
+export const education: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
-  },
-  {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
+    date: 'December 2015',
+    location: 'University of Nevada Reno',
+    title: 'Bachelor of Science: Information Systems',
+    content: <></>,
   },
 ];
+
 
 /**
  * Testimonial section
@@ -336,27 +310,12 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: 'Feel free to reach out if you\'d like to discuss web development opportunities or collaborate on a project.',
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
-    },
-    {
-      type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
-    },
-    {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
-    },
-    {
-      type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'nick.finney21@gmail.com',
+      href: 'mailto:nick.finney21@gmail.com',
     },
   ],
 };
@@ -364,10 +323,5 @@ export const contact: ContactSection = {
 /**
  * Social items
  */
-export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
-];
+export const socialLinks: Social[] = [];
+

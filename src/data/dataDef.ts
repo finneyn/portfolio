@@ -76,6 +76,20 @@ export interface SkillGroup {
 /**
  * Portfolio section
  */
+export interface PortfolioMedia {
+  type: 'image' | 'video';
+  src: string | StaticImageData;
+  thumbnail?: string | StaticImageData;
+  alt?: string;
+}
+
+export interface PortfolioClient {
+  name: string;
+  description: string;
+  url?: string;
+  media: PortfolioMedia[];
+}
+
 export interface PortfolioItem {
   title: string;
   description: string;
